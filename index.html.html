@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>MARFID GROUP | Cacao de Calidad desde su Origen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MARFID GROUP – Cacao CCN51 de origen controlado, producido en una finca familiar en Ecuador desde 2010 y exportado para marcas exigentes en Estados Unidos." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-alt: #0b0b0b;
+      --accent: #c6a15a;
+      --accent-soft: #e0b96c;
+      --accent-dark: #8f6c30;
+      --text: #f4ede1;
+      --muted: #b7a78c;
+      --card: #101010;
+      --border: #26201a;
+      --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.75);
+      --radius-lg: 18px;
+      --radius-xl: 28px;
+      --max-width: 1120px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #15100a 0, #050505 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: var(--accent-soft);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Layout base */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header / Navegación */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 5, 5, 0.96),
+        rgba(5, 5, 5, 0.88),
+        transparent
+      );
+      border-bottom: 1px solid rgba(198, 161, 90, 0.15);
+      transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .header--scrolled {
+      background: rgba(5, 5, 5, 0.98);
+      border-bottom-color: rgba(198, 161, 90, 0.4);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1.75rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .brand__logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(198, 161, 90, 0.8);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.8);
+      background: #000;
+      flex-shrink: 0;
+    }
+
+    .brand__logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand__text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .brand__name {
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .brand__tagline {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.92rem;
+    }
+
+    .nav__list {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 1.25rem;
+    }
+
+    .nav__link {
+      position: relative;
+      color: var(--muted);
+      padding-bottom: 0.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.75rem;
+    }
+
+    .nav__link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--accent-soft), var(--accent));
+      transition: width 0.22s ease-out;
+    }
+
+    .nav__link:hover::after {
+      width: 100%;
+    }
+
+    .nav__cta {
+      border-radius: 999px;
+      padding: 0.5rem 1.15rem;
+      border: 1px solid rgba(198, 161, 90, 0.7);
+      background: radial-gradient(circle at top left, rgba(198, 161, 90, 0.4), transparent 55%);
+      color: var(--text);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .nav__cta span {
+      font-size: 1rem;
+    }
+
+    .nav__cta:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid rgba(198, 161, 90, 0.6);
+      border-radius: 999px;
+      color: var(--text);
+      width: 38px;
+      height: 32px;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      padding: 4.5rem 0 4rem;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(198, 161, 90, 0.24), transparent 60%),
+        radial-gradient(circle at 110% 10%, rgba(139, 92, 34, 0.28), transparent 65%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero__inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(198, 161, 90, 0.6);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      background: rgba(5, 5, 5, 0.7);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero__eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(to bottom right, var(--accent-soft), var(--accent-dark));
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.3rem, 3.1vw + 1.4rem, 3.4rem);
+      line-height: 1.08;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      color: var(--accent-soft);
+    }
+
+    .hero__subtitle {
+      font-size: 1.03rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.7rem;
+    }
+
+    .hero__badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero__badge {
+      font-size: 0.78rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(198, 161, 90, 0.3);
+      background: radial-gradient(circle at top, rgba(198, 161, 90, 0.16), rgba(14, 11, 8, 0.98));
+      color: var(--muted);
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.7rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn--primary {
+      background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+      color: #1b1207;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn--primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 28px 56px rgba(0, 0, 0, 0.9);
+      text-decoration: none;
+    }
+
+    .btn--ghost {
+      background: rgba(9, 9, 9, 0.7);
+      border-color: rgba(198, 161, 90, 0.4);
+      color: var(--text);
+    }
+
+    .btn--ghost:hover {
+      border-color: rgba(198, 161, 90, 0.8);
+      background: rgba(15, 13, 10, 0.9);
+      text-decoration: none;
+    }
+
+    .btn__icon {
+      font-size: 1.1rem;
+    }
+
+    .hero__note {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero__image {
+      justify-self: flex-end;
+    }
+
+    .hero__image-frame {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: radial-gradient(circle at top left, rgba(198, 161, 90, 0.25), transparent 55%);
+      border: 1px solid rgba(198, 161, 90, 0.4);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero__image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: 430px;
+    }
+
+    .hero__image-tag {
+      position: absolute;
+      left: 1.1rem;
+      bottom: 1.1rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(5, 5, 5, 0.82);
+      border: 1px solid rgba(198, 161, 90, 0.65);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero__image-tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: linear-gradient(to bottom right, #22c55e, #15803d);
+      box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.35);
+    }
+
+    /* Secciones genéricas */
+    .section {
+      padding: 4.5rem 0;
+    }
+
+    .section--alt {
+      background: radial-gradient(circle at top, #111015, #050505 55%, #000 100%);
+    }
+
+    .section__inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.8rem;
+      align-items: center;
+    }
+
+    .section__inner--reverse {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    }
+
+    .section__inner--single {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .section__kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .section__title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .section__title span {
+      color: var(--accent-soft);
+    }
+
+    .section__text {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .section__highlight {
+      font-size: 0.87rem;
+      color: var(--text);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+    }
+
+    .pill {
+      font-size: 0.78rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(198, 161, 90, 0.35);
+      background: rgba(9, 9, 9, 0.9);
+      color: var(--muted);
+    }
+
+    .card-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow-soft);
+      background: radial-gradient(circle at top left, rgba(198, 161, 90, 0.25), transparent 60%);
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: 360px;
+    }
+
+    /* Slider dentro del card-image */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 360px;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+    }
+
+    .slider-wrapper {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slider-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.55);
+      color: var(--accent-soft);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.6rem 0.9rem;
+      font-size: 1.4rem;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 10;
+      backdrop-filter: blur(3px);
+    }
+
+    .slider-btn:hover {
+      background: rgba(0,0,0,0.8);
+    }
+
+    .slider-btn.prev { left: 12px; }
+    .slider-btn.next { right: 12px; }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 10;
+    }
+
+    .slider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      border: none;
+      background: rgba(255,255,255,0.35);
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .slider-dot--active {
+      background: var(--accent-soft);
+    }
+
+    /* Proceso */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .step-card {
+      position: relative;
+      padding: 1.3rem 1.2rem 1.4rem;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, rgba(198, 161, 90, 0.16), rgba(10, 8, 6, 0.95));
+      border: 1px solid rgba(198, 161, 90, 0.4);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+    }
+
+    .step-card__number {
+      position: absolute;
+      top: 0.9rem;
+      right: 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .step-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .step-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Producto / Tabla */
+    .spec-card {
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.4rem;
+      background: rgba(4, 4, 4, 0.9);
+      border: 1px solid rgba(198, 161, 90, 0.4);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .spec-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .spec-table tr + tr td {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .spec-table td {
+      padding: 0.35rem 0;
+    }
+
+    .spec-table td:first-child {
+      color: var(--muted);
+      width: 42%;
+      padding-right: 0.75rem;
+    }
+
+    .spec-table td:last-child {
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    /* Sostenibilidad */
+    .sustain-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.8rem;
+    }
+
+    .sustain-card {
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.3rem 1.5rem;
+      background: rgba(7, 7, 7, 0.95);
+      border: 1px solid rgba(198, 161, 90, 0.35);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .sustain-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .sustain-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Galería */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(7, 7, 7, 0.95);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .gallery-item figcaption {
+      padding: 0.75rem 0.8rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Contacto */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: flex-start;
+      margin-top: 1.6rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .contact-list strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+    }
+
+    .social-chip {
+      border-radius: 999px;
+      border: 1px solid rgba(198, 161, 90, 0.35);
+      padding: 0.35rem 0.8rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: rgba(5, 5, 5, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .form {
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.4rem;
+      background: rgba(4, 4, 4, 0.96);
+      border: 1px solid rgba(198, 161, 90, 0.4);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .form h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .form__row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .form__group {
+      margin-bottom: 0.9rem;
+    }
+
+    .form label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.25rem;
+      color: var(--muted);
+    }
+
+    .form input,
+    .form textarea {
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(8, 8, 8, 0.9);
+      padding: 0.55rem 0.85rem;
+      outline: none;
+      font-family: inherit;
+      font-size: 0.86rem;
+      color: var(--text);
+    }
+
+    .form textarea {
+      border-radius: 16px;
+      min-height: 110px;
+      resize: vertical;
+      line-height: 1.4;
+    }
+
+    .form input:focus,
+    .form textarea:focus {
+      border-color: rgba(198, 161, 90, 0.8);
+      box-shadow: 0 0 0 1px rgba(198, 161, 90, 0.45);
+    }
+
+    .form__note {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid rgba(198, 161, 90, 0.25);
+      background: #050505;
+      padding: 1.8rem 0 2.1rem;
+      margin-top: 2rem;
+    }
+
+    .footer__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      align-items: center;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .footer__small {
+      font-size: 0.78rem;
+    }
+
+    /* LIGHTBOX – Ver imagen en pantalla completa */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 1rem;
+    }
+
+    .lightbox--open {
+      display: flex;
+    }
+
+    .lightbox__img {
+      max-width: 95vw;
+      max-height: 95vh;
+      border-radius: 16px;
+      object-fit: contain;
+      border: 1px solid rgba(198, 161, 90, 0.6);
+      background: #000;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+    }
+
+    .lightbox__close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(0, 0, 0, 0.75);
+      border: 1px solid rgba(198, 161, 90, 0.6);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      font-size: 1.4rem;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .lightbox__close:hover {
+      background: rgba(0, 0, 0, 0.95);
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero__inner,
+      .section__inner,
+      .section__inner--reverse,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 3.6rem;
+      }
+
+      .hero__image {
+        order: -1;
+        justify-self: stretch;
+      }
+
+      .hero__image-frame img {
+        max-height: 340px;
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header__inner {
+        padding: 0.75rem 0;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav {
+        position: absolute;
+        inset-inline: 0;
+        top: 100%;
+        padding: 0.75rem 1.5rem 1rem;
+        background: rgba(5, 5, 5, 0.98);
+        border-bottom: 1px solid rgba(198, 161, 90, 0.28);
+        transform-origin: top;
+        transform: scaleY(0.2);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.16s ease-out, opacity 0.16s ease-out;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .nav--open {
+        transform: scaleY(1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav__list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.55rem;
+      }
+
+      .nav__cta {
+        align-self: flex-start;
+      }
+
+      .hero__inner {
+        gap: 2.2rem;
+      }
+
+      .section {
+        padding: 3.5rem 0;
+      }
+
+      .steps-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .sustain-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .form__row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+
+      .hero__badge {
+        width: 100%;
+      }
+
+      .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <div class="brand">
+        <div class="brand__logo">
+          <img src="logo-marfid.png" alt="MARFID · Excelencia desde la raíz" />
+        </div>
+        <div class="brand__text">
+          <div class="brand__name">MARFID GROUP</div>
+          <div class="brand__tagline">Excelencia desde la raíz</div>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        ☰
+      </button>
+
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#inicio">Inicio</a></li>
+          <li><a class="nav__link" href="#nosotros">Nosotros</a></li>
+          <li><a class="nav__link" href="#proceso">Proceso</a></li>
+          <li><a class="nav__link" href="#producto">Producto</a></li>
+          <li><a class="nav__link" href="#sostenibilidad">Sostenibilidad</a></li>
+          <li><a class="nav__link" href="#galeria">Galería</a></li>
+          <li><a class="nav__link" href="#contacto">Contacto</a></li>
+        </ul>
+        <a
+          class="nav__cta"
+          href="https://wa.me/15513144451"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="btn__icon">✆</span> WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero__inner">
+        <div>
+          <div class="hero__eyebrow">
+            <span class="hero__eyebrow-dot"></span>
+            Cacao de calidad desde su origen
+          </div>
+          <h1>
+            <span>CCN51</span> premium desde Ecuador<br />
+            para marcas exigentes en Estados Unidos
+          </h1>
+          <p class="hero__subtitle">
+            MARFID GROUP es la extensión empresarial de una finca familiar en Ecuador,
+            dedicada desde 2010 al cultivo de cacao CCN51. Conectamos el origen
+            con la industria del chocolate en Estados Unidos, de forma directa y transparente.
+          </p>
+
+          <div class="hero__badges">
+            <span class="hero__badge">Producción familiar desde 2010</span>
+            <span class="hero__badge">Lotes trazables y seleccionados</span>
+            <span class="hero__badge">Enfoque en calidad y relación a largo plazo</span>
+          </div>
+
+          <div class="hero__actions">
+            <a
+              class="btn btn--primary"
+              href="https://wa.me/15513144451"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="btn__icon">💬</span>
+              Hablar por WhatsApp
+            </a>
+            <a class="btn btn--ghost" href="#producto">
+              <span class="btn__icon">📄</span>
+              Ver especificaciones
+            </a>
+          </div>
+          <p class="hero__note">
+            También podemos coordinar llamadas en inglés o español.
+          </p>
+        </div>
+
+        <div class="hero__image">
+          <div class="hero__image-frame">
+            <img src="hero-cacao.jpg" alt="Cacao MARFID listo para exportación" loading="lazy" />
+            <div class="hero__image-tag">
+              <span class="hero__image-tag-dot"></span>
+              Lote familiar · Ecuador
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="section section--alt" id="nosotros">
+      <div class="container section__inner section__inner--reverse">
+        <div>
+          <div class="section__kicker">¿Quiénes somos?</div>
+          <h2 class="section__title">
+            MARFID <span>GROUP</span>, una estructura ligera sobre una finca real
+          </h2>
+          <p class="section__text">
+            Nacemos de una familia productora de cacao en Ecuador que decidió ir
+            un paso más allá: no solo cultivar, sino también acercar directamente
+            el grano a quienes lo transforman en chocolate de calidad.
+          </p>
+          <p class="section__text">
+            MARFID GROUP LLC en Estados Unidos nos permite manejar contratos,
+            pagos y logística con mejores tiempos de respuesta, sin perder el
+            control de origen que da trabajar con tu propia finca y familia.
+          </p>
+          <p class="section__highlight">
+            El objetivo es simple: pocos clientes, relaciones a largo plazo y
+            un suministro de cacao CCN51 consistente, honesto y bien cuidado.
+          </p>
+
+          <div class="pill-list">
+            <span class="pill">Finca familiar en Ecuador</span>
+            <span class="pill">Presencia legal en EE. U.S.</span>
+            <span class="pill">Lotes pequeños y cuidados</span>
+            <span class="pill">Atención directa con los dueños</span>
+          </div>
+        </div>
+
+        <!-- SLIDER DE 10 IMÁGENES -->
+        <div class="card-image slider-container">
+          <div class="slider-wrapper" id="sliderWrapper">
+            <img src="galeria-finca1.jpg" alt="Finca 1">
+            <img src="galeria-finca2.jpg" alt="Finca 2">
+            <img src="galeria-finca3.jpg" alt="Finca 3">
+            <img src="galeria-finca4.jpg" alt="Finca 4">
+            <img src="galeria-finca5.jpg" alt="Finca 5">
+            <img src="galeria-finca6.jpg" alt="Finca 6">
+            <img src="galeria-finca7.jpg" alt="Finca 7">
+            <img src="galeria-finca8.jpg alt="Finca 8">
+            <img src="galeria-finca9.jpg" alt="Finca 9">
+            <img src="galeria-finca10.jpg" alt="Finca 10">
+          </div>
+
+          <button class="slider-btn prev" id="prevBtn">❮</button>
+          <button class="slider-btn next" id="nextBtn">❯</button>
+
+          <div class="slider-dots" id="sliderDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="section" id="proceso">
+      <div class="container">
+        <div class="section__inner section__inner--single">
+          <div>
+            <div class="section__kicker">Calidad desde el origen</div>
+            <h2 class="section__title">Proceso del cacao, de la finca al contenedor</h2>
+            <p class="section__text">
+              Controlamos cada etapa clave antes de exportar el cacao CCN51:
+              desde la selección de mazorcas hasta la paletización final. Esto
+              reduce sorpresas en destino y facilita el trabajo del tostador o
+              comprador final.
+            </p>
+            <p class="section__highlight">
+              A continuación, un resumen del proceso que seguimos en cada lote:
+            </p>
+
+            <div class="steps-grid">
+              <article class="step-card">
+                <span class="step-card__number">01</span>
+                <h3>Cosecha en el punto óptimo</h3>
+                <p>
+                  Seleccionamos mazorcas maduras, cuidando la mezcla adecuada de
+                  árboles para mantener estabilidad en sabor y rendimiento.
+                </p>
+              </article>
+
+              <article class="step-card">
+                <span class="step-card__number">02</span>
+                <h3>Apertura y beneficio</h3>
+                <p>
+                  Apertura manual controlada y manejo del baba para evitar
+                  fermentaciones indeseadas antes del proceso principal.
+                </p>
+              </article>
+
+              <article class="step-card">
+                <span class="step-card__number">03</span>
+                <h3>Fermentación y volteo</h3>
+                <p>
+                  Fermentación en cajas con volteos programados, buscando
+                  perfiles limpios y evitando notas ácidas o defectos fuertes.
+                </p>
+              </article>
+
+              <article class="step-card">
+                <span class="step-card__number">04</span>
+                <h3>Secado y estabilización</h3>
+                <p>
+                  Secado al sol controlado hasta alcanzar humedad adecuada para
+                  exportación y almacenaje seguro.
+                </p>
+              </article>
+
+              <article class="step-card">
+                <span class="step-card__number">05</span>
+                <h3>Limpieza y selección</h3>
+                <p>
+                  Removemos impurezas y granos defectuosos antes del empaque;
+                  buscamos un lote homogéneo, visualmente limpio y estable.
+                </p>
+              </article>
+
+              <article class="step-card">
+                <span class="step-card__number">06</span>
+                <h3>Empaque y paletización</h3>
+                <p>
+                  Empacamos en sacos aptos para exportación y paletizamos según
+                  los requisitos de la logística internacional hacia EE. UU.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTO -->
+    <section class="section section--alt" id="producto">
+      <div class="container section__inner">
+        <div>
+          <div class="section__kicker">Nuestro producto</div>
+          <h2 class="section__title">
+            Cacao <span>CCN51</span> de origen controlado para uso industrial
+          </h2>
+          <p class="section__text">
+            Trabajamos principalmente con cacao CCN51, muy valorado por su
+            rendimiento en manteca, buena fermentación y estabilidad de oferta.
+            Es ideal para industrias que buscan un cacao confiable para
+            <em>blends</em>, coberturas y productos con volúmenes consistentes.
+          </p>
+          <p class="section__highlight">
+            Bajo volumen al inicio, alto control de calidad y enfoque en
+            construir historial de trabajo con nuestros clientes.
+          </p>
+
+          <div class="pill-list">
+            <span class="pill">Grano seco, a granel</span>
+            <span class="pill">Sacos aptos para exportación</span>
+            <span class="pill">Paletizado según requerimiento</span>
+            <span class="pill">Envíos iniciales en volúmenes manejables</span>
+          </div>
+        </div>
+
+        <aside class="spec-card">
+          <h3>Ficha rápida del cacao MARFID</h3>
+          <table class="spec-table">
+            <tr>
+              <td>Variedad principal</td>
+              <td>CCN51</td>
+            </tr>
+            <tr>
+              <td>Origen</td>
+              <td>Finca familiar en Ecuador</td>
+            </tr>
+            <tr>
+              <td>Tipo de producto</td>
+              <td>Cacao en grano seco, a granel</td>
+            </tr>
+            <tr>
+              <td>Fermentación</td>
+              <td>Fermentado y secado controlado</td>
+            </tr>
+            <tr>
+              <td>Presentación</td>
+              <td>Sacos en pallets, listos para exportación</td>
+            </tr>
+            <tr>
+              <td>Destinos actuales</td>
+              <td>Estados Unidos (primeros clientes)</td>
+            </tr>
+            <tr>
+              <td>Uso recomendado</td>
+              <td>Industria, chocolatería, blends y coberturas</td>
+            </tr>
+          </table>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SOSTENIBILIDAD -->
+    <section class="section" id="sostenibilidad">
+      <div class="container section__inner section__inner--single">
+        <div>
+          <div class="section__kicker">Más allá del grano</div>
+          <h2 class="section__title">Sostenibilidad y responsabilidad social</h2>
+          <p class="section__text">
+            Venimos del campo y seguimos allí. Más que un discurso, la
+            sostenibilidad para nosotros es evitar malas prácticas, mantener el
+            suelo vivo y asegurar que las familias que dependen del cacao
+            tengan una base estable.
+          </p>
+
+          <div class="sustain-grid">
+            <article class="sustain-card">
+              <h3>Desarrollo sostenible</h3>
+              <p>
+                Cuidamos el manejo de suelos, el uso responsable de insumos y el
+                equilibrio entre productividad y salud del cultivo. Queremos
+                cacao hoy, pero también cacao dentro de diez o veinte años.
+              </p>
+            </article>
+
+            <article class="sustain-card">
+              <h3>Responsabilidad social</h3>
+              <p>
+                Trabajamos con mano de obra local, apoyamos a la familia
+                productora y buscamos relaciones estables con compradores que
+                valoren el trabajo detrás del grano, no solo el precio del día.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="section section--alt" id="galeria">
+      <div class="container section__inner section__inner--single">
+        <div>
+          <div class="section__kicker">Galería</div>
+          <h2 class="section__title">Del árbol al grano seco</h2>
+          <p class="section__text">
+            Algunas imágenes del cacao MARFID en su origen: la finca, las
+            mazorcas, el grano seco y parte del proceso. Puedes actualizar estas
+            fotos con material nuevo cuando quieras.
+          </p>
+
+          <div class="gallery-grid">
+            <figure class="gallery-item">
+              <img
+                src="galeria-mano-mazorca.jpg"
+                alt="Mazorcas de cacao en mano"
+                loading="lazy"
+              />
+              <figcaption>
+                Selección manual de mazorcas en la finca antes de la apertura.
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+              <img
+                src="galeria-grano-seco.jpg"
+                alt="Grano de cacao seco MARFID"
+                loading="lazy"
+              />
+              <figcaption>
+                Granos secos, limpios y listos para empaque y paletización.
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+              <img
+                src="galeria-finca.jpg"
+                alt="Cultivo de cacao en Ecuador"
+                loading="lazy"
+              />
+              <figcaption>
+                Finca de cacao en Ecuador, donde inicia la historia de cada lote.
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+              <video controls preload="metadata">
+                <source src="video-proceso.mp4" type="video/mp4" />
+                Tu navegador no soporta video HTML5.
+              </video>
+              <figcaption>
+                Fragmento del proceso de manejo de grano para exportación.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section" id="contacto">
+      <div class="container section__inner section__inner--single">
+        <div>
+          <div class="section__kicker">Contacto</div>
+          <h2 class="section__title">Conversemos sobre tu próximo lote de cacao</h2>
+          <p class="section__text">
+            Si estás construyendo una marca o buscas un proveedor de cacao
+            CCN51 con historia familiar y presencia en Estados Unidos, escríbenos.
+            Podemos empezar con volúmenes manejables y crecer juntos.
+          </p>
+
+          <div class="contact-grid">
+            <div>
+              <ul class="contact-list">
+                <li>
+                  <strong>Correo:</strong><br />
+                  <a href="mailto:marfidgroup@gmail.com">marfidgroup@gmail.com</a>
+                </li>
+                <li>
+                  <strong>WhatsApp / Teléfono EE. UU.:</strong><br />
+                  <a
+                    href="https://wa.me/15513144451"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    +1 551 314 4451
+                  </a>
+                </li>
+                <li>
+                  <strong>Redes sociales:</strong><br />
+                  Instagram:
+                  <a
+                    href="https://instagram.com/marfidcacao.us"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    @marfidcacao.us
+                  </a>
+                  <br />
+                  Facebook:
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61583608846167"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    MARFID Cacao
+                  </a>
+                </li>
+                <li>
+                  <strong>Ubicación:</strong><br />
+                  Operamos entre Ecuador (origen del cacao) y Estados Unidos
+                  (MARFID GROUP LLC).
+                </li>
+              </ul>
+
+              <div class="social-row">
+                <div class="social-chip">🌱 Origen familiar en Ecuador</div>
+                <div class="social-chip">🇺🇸 Presencia legal en EE. U.S.</div>
+                <div class="social-chip">🤝 Relaciones a largo plazo</div>
+              </div>
+            </div>
+
+            <form class="form" onsubmit="return handleFormSubmit(event);">
+              <h3>Envíanos un mensaje</h3>
+
+              <div class="form__row">
+                <div class="form__group">
+                  <label for="name">Nombre</label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Tu nombre"
+                    required
+                  />
+                </div>
+
+                <div class="form__group">
+                  <label for="email">Email</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="tu@correo.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form__group">
+                <label for="message">Mensaje</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Cuéntanos qué tipo de cacao o volumen estás buscando..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary">
+                <span class="btn__icon">✉️</span>
+                Enviar mensaje
+              </button>
+              <p class="form__note">
+                Al hacer clic se abrirá tu cliente de correo con el mensaje
+                prellenado para enviarlo a MARFID GROUP.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> MARFID GROUP LLC. Todos los derechos reservados.</p>
+      <p class="footer__small">
+        Cacao CCN51 premium desde Ecuador · Excelencia desde la raíz.
+      </p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX PARA VER IMÁGENES EN GRANDE -->
+  <div class="lightbox" id="lightbox">
+    <button
+      type="button"
+      class="lightbox__close"
+      id="lightboxClose"
+      aria-label="Cerrar imagen ampliada"
+    >
+      ✕
+    </button>
+    <img
+      src=""
+      alt="Imagen ampliada"
+      class="lightbox__img"
+      id="lightboxImg"
+    />
+  </div>
+
+  <script>
+    // Menú móvil
+    const navToggle = document.getElementById("navToggle");
+    const nav = document.getElementById("nav");
+
+    if (navToggle && nav) {
+      navToggle.addEventListener("click", () => {
+        nav.classList.toggle("nav--open");
+      });
+    }
+
+    // Año dinámico en el footer
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // Header sticky con sombra al hacer scroll
+    const header = document.getElementById("header");
+    const onScroll = () => {
+      if (!header) return;
+      if (window.scrollY > 10) {
+        header.classList.add("header--scrolled");
+      } else {
+        header.classList.remove("header--scrolled");
+      }
+    };
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+
+    // Manejo del formulario: abre mailto con los datos
+    function handleFormSubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name")?.value.trim() || "";
+      const email = document.getElementById("email")?.value.trim() || "";
+      const message = document.getElementById("message")?.value.trim() || "";
+
+      const subject = encodeURIComponent("Consulta desde la web de MARFID GROUP");
+      const body = encodeURIComponent(
+        `Nombre: ${name}\nEmail: ${email}\n\nMensaje:\n${message}`
+      );
+
+      const to = "marfidgroup@gmail.com";
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+
+      return false;
+    }
+
+    // SLIDER DE IMÁGENES
+    const sliderWrapper = document.getElementById("sliderWrapper");
+    const sliderDotsContainer = document.getElementById("sliderDots");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let slideIndex = 0;
+    let sliderInterval = null;
+
+    if (sliderWrapper && sliderDotsContainer && prevBtn && nextBtn) {
+      const slides = Array.from(sliderWrapper.querySelectorAll("img"));
+      const totalSlides = slides.length;
+
+      // Crear puntitos
+      slides.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.classList.add("slider-dot");
+        if (i === 0) dot.classList.add("slider-dot--active");
+        dot.setAttribute("data-index", i.toString());
+        dot.addEventListener("click", () => {
+          showSlide(i);
+          restartInterval();
+        });
+        sliderDotsContainer.appendChild(dot);
+      });
+
+      const dots = Array.from(sliderDotsContainer.querySelectorAll(".slider-dot"));
+
+      function updateDots() {
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("slider-dot--active", i === slideIndex);
+        });
+      }
+
+      function showSlide(i) {
+        slideIndex = (i + totalSlides) % totalSlides;
+        sliderWrapper.style.transform = `translateX(${-slideIndex * 100}%)`;
+        updateDots();
+      }
+
+      prevBtn.addEventListener("click", () => {
+        showSlide(slideIndex - 1);
+        restartInterval();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        showSlide(slideIndex + 1);
+        restartInterval();
+      });
+
+      function startInterval() {
+        sliderInterval = setInterval(() => {
+          showSlide(slideIndex + 1);
+        }, 4000);
+      }
+
+      function restartInterval() {
+        if (sliderInterval) clearInterval(sliderInterval);
+        startInterval();
+      }
+
+      startInterval();
+    }
+
+    // LIGHTBOX PARA IMÁGENES DEL SLIDER
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    if (lightbox && lightboxImg && lightboxClose && sliderWrapper) {
+      const sliderImages = sliderWrapper.querySelectorAll("img");
+
+      sliderImages.forEach((img) => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt || "Imagen ampliada";
+          lightbox.classList.add("lightbox--open");
+        });
+      });
+
+      const closeLightbox = () => {
+        lightbox.classList.remove("lightbox--open");
+      };
+
+      // Cerrar con botón
+      lightboxClose.addEventListener("click", closeLightbox);
+
+      // Cerrar al clicar fuera de la imagen
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Cerrar con tecla ESC
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeLightbox();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
